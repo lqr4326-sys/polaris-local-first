@@ -32,6 +32,7 @@ export default defineConfig(({ mode }) => {
   const apiOrigin = env.VITE_POLARIS_API_ORIGIN?.trim();
 
   return {
+    base: '/polaris-local-first/',
     plugins: [react()],
     server: apiOrigin
       ? {
