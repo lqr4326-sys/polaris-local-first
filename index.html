@@ -17,6 +17,9 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Polaris" />
     <meta name="twitter:description" content="一个能和 AI 对话，也会陪你一起长出样子的房间。" />
+      <link rel="manifest" href="/polaris-local-first/manifest.webmanifest" />
+    <meta name="theme-color" content="#0a1430" />
+    <link rel="apple-touch-icon" href="/polaris-local-first/icons/icon-192.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Polaris" />
@@ -152,7 +155,18 @@
     <title>Polaris</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="root"></dv>
+  
+  
+  <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+              navigator.serviceWorker.register('/polaris-local-first/sw.js');
+        });
+    }
+      </script>
+      
+        <script type="module" src="/src/main.tsx"></script>
   </body>
+
 </html>
